@@ -1,0 +1,10 @@
+frp = franco-provençal
+goh = ancien haut-allemand
+got = gotique
+gu = gujarati
+njo = ao
+se = same du Nord
+sma = same du Sud
+smj = same de Lule
+smn = same d’Inari
+sms = same skolt

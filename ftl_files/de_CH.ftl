@@ -1,0 +1,13 @@
+ace = Aceh-Sprache
+ach = Acholi-Sprache
+bas = Basaa-Sprache
+be = Weissrussisch
+bik = Bikol-Sprache
+bin = Bini-Sprache
+chb = Chibcha-Sprache
+din = Dinka-Sprache
+fan = Pangwe-Sprache
+gba = Gbaya-Sprache
+kmb = Kimbundu-Sprache
+mus = Muskogee-Sprache
+prg = Altpreussisch

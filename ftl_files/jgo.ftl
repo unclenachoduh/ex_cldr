@@ -1,0 +1,8 @@
+ar = Alâbɛ
+de = Njáman
+el = Ŋgɛlɛ̂k
+en = Aŋgɛlúshi
+fr = Fɛlánci
+jgo = Ndaꞌa
+und = cú-pʉɔ yi pɛ́ ká kɛ́ jí
+zh = Shinwâ
