@@ -11,3 +11,7 @@ This script downloads all of the CLDR files available from the [ICU Project webs
 This script is meant to be ran in the terminal with Python 3.
 
 `python3 extract_CLDR.py`
+
+## Output
+
+The folder "ftl_files" contains the extracted data. Each file contains the variable/value pairs from the CLDR files with the label "Languages". The format for each pair is `var = value`.
