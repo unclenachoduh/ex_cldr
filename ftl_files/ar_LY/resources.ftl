@@ -1,0 +1,9 @@
+language-name-arn = المابودونجونية
+language-name-gn = الغورانية
+language-name-hsb = صوربيا العليا
+language-name-lo = اللاوو
+language-name-sh = الكرواتية الصربية
+language-name-sma = سامي الجنوبية
+language-name-sw = السواحيلية
+language-name-sw_CD = السواحيلية الكونغولية
+language-name-ti = التيغرينية

@@ -1,2 +1,0 @@
-bn = Bengali
-or = Oriya

@@ -15,12 +15,12 @@ for line in home_lines:
         langs.append(me[1])
 
 directory = "ftl_files/"
-if not os.path.exists(directory):
-    os.makedirs(directory)
 
 for lang in langs:
-    # print(lang)
-    new_file = re.sub(".txt", ".ftl", lang)
+    new_directory = re.sub(".txt", "", lang)
+    if not os.path.exists(directory + new_directory):
+        os.makedirs(directory + new_directory)
+    new_file = new_directory + "/resources.ftl"
     wout = open(directory + new_file, "w+")
     if lang[-4:] == ".txt":
         source = urllib.request.urlopen("http://icu-project.org/trac/browser/trunk/icu4c/source/data/lang/" + lang + "?format=txt")
@@ -44,4 +44,4 @@ for lang in langs:
                 elif len(re.findall("{", line)) < 2 and len(re.findall("}", line)) < 2:
                     if catch == True:
                         parts = re.split("[\{\}\"]", line)
-                        wout.write(parts[0] + " = " + parts[2] + "\n")
+                        wout.write("language-name-" + parts[0] + " = " + parts[2] + "\n")

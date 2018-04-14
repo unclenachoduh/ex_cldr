@@ -1,0 +1,15 @@
+language-name-arn = mapudungun
+language-name-be = bjeloruski
+language-name-bm = bamanankan
+language-name-bn = bangla
+language-name-gsw = švajcarski nemački
+language-name-ht = haićanski kreolski
+language-name-lo = laoški
+language-name-moh = mohok
+language-name-nqo = n’ko
+language-name-shi = južni šilha
+language-name-si = sinhalski
+language-name-tzm = centralnoatlaski tamašek
+language-name-xh = isikosa
+language-name-zgh = standardni marokanski tamašek
+language-name-zu = isizulu

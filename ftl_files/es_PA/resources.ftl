@@ -1,0 +1,14 @@
+language-name-ace = acehnés
+language-name-arp = arapaho
+language-name-bho = bhojpuri
+language-name-eu = euskera
+language-name-grc = griego antiguo
+language-name-lo = lao
+language-name-nso = sotho septentrional
+language-name-pa = punyabí
+language-name-ss = siswati
+language-name-sw = suajili
+language-name-sw_CD = suajili del Congo
+language-name-tn = setswana
+language-name-wo = wolof
+language-name-zgh = tamazight marroquí estándar

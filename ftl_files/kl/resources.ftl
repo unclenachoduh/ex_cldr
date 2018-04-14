@@ -1,0 +1,1 @@
+language-name-kl = kalaallisut
