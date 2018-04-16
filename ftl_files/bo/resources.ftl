@@ -1,9 +1,0 @@
-language-name-bo = བོད་སྐད་
-language-name-dz = རྫོང་ཁ
-language-name-en = དབྱིན་ཇིའི་སྐད།
-language-name-hi = ཧིན་དི
-language-name-ja = ཉི་ཧོང་སྐད་
-language-name-ne = ནེ་པ་ལི
-language-name-ru = ཨུ་རུ་སུ་སྐད་
-language-name-zh = རྒྱ་སྐད་
-language-name-zza = ཟ་ཟའ་སྐད།

@@ -1,6 +1,8 @@
 import urllib.request
 import re
 import os
+from fluent.syntax import ast
+from fluent.syntax import serialize
 
 home = urllib.request.urlopen("http://bugs.icu-project.org/trac/browser/trunk/icu4c/source/data/lang?order=name")
 home_text = home.read().decode('utf-8', "strict")
@@ -44,4 +46,13 @@ for lang in langs:
                 elif len(re.findall("{", line)) < 2 and len(re.findall("}", line)) < 2:
                     if catch == True:
                         parts = re.split("[\{\}\"]", line)
-                        wout.write("language-name-" + parts[0] + " = " + parts[2] + "\n")
+
+                        res = ast.Resource()
+
+                        l10n_id = ast.Identifier("language-name-{}".format(parts[0]))
+                        value = ast.Pattern([ast.TextElement(parts[2])])
+                        msg = ast.Message(l10n_id, value)
+                        res.body.append(msg)
+
+                        s = serialize(res)
+                        wout.write(s)
