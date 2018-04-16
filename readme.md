@@ -14,6 +14,6 @@ This script is meant to be ran in the terminal with Python 3.
 
 ## Output
 
-The folder `ftl_files` contains the extracted data. Each file contains the variable/value pairs from the CLDR files with the label "Languages".
+The folder `ftl_files` contains the extracted data. Each folder is labeled with the language or region name from the CLDR data and contains a file with the variable/value pairs from the CLDR for language and region (region not yet complete).
 
 The format for each pair is `var = value`.
