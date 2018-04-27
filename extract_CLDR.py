@@ -32,8 +32,6 @@ def cldr_to_ftl(langs, config):
         find_str = "Countries{"
         name_str = "region-name-{}"
 
-
-
     directory = "ftl_files/"
 
     for lang in langs:
@@ -76,6 +74,51 @@ def cldr_to_ftl(langs, config):
                             wout.write(s)
         wout.close()
 
+def overlay(path):
+
+    directory = "ftl_files/"
+    dir_list = os.listdir(path)
+    for file_name in dir_list:
+        over_lines = open(path + file_name).readlines()
+
+        over_dict = {}
+
+        for over_line in over_lines:
+            piece = over_line.split(" = ")
+            over_dict[piece[0]] = over_line
+
+        parts = file_name.split(".")
+        lang = parts[0]
+        file_loc = directory + lang + "/resources.ftl"
+
+        if os.path.exists(file_loc):
+            old_lines = open(file_loc).readlines()
+
+            wout = open(file_loc, "w+")
+
+            for old_line in old_lines:
+                piece = old_line.split(" = ")
+
+                if piece[0] in over_dict:
+                    wout.write(over_dict[piece[0]])
+                    over_lines.remove(over_dict[piece[0]])
+
+                else:
+                    wout.write(old_line)
+
+            for left_over in over_lines:
+                wout.write(left_over)
+
+            wout.close()
+
+
+        else:
+            os.makedirs(directory + lang + "/")
+            wout = open(file_loc, "w+")
+            for over_line in over_lines:
+                wout.write(over_line)
+            wout.close()
+
 if __name__== "__main__":
     if os.path.exists("ftl_files/"):
         shutil.rmtree('ftl_files/')
@@ -93,3 +136,9 @@ if __name__== "__main__":
     regions = get_file_names(region_lines) # list of language names
 
     cldr_to_ftl(regions, 1)
+
+    if os.path.exists("overlays/languages"):
+        overlay("overlays/languages/")
+
+    if os.path.exists("overlays/regions/"):
+        overlay("overlays/regions/")
