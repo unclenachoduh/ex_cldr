@@ -165,8 +165,7 @@ def overlay(path):
             for left_over in over_lines:
                 wout.write(left_over)
 
-            wout.c
-        else:lose()
+            wout.close()
 
 
         else:
@@ -183,6 +182,8 @@ if __name__== "__main__":
     if os.path.exists("ftl_files/"):
         shutil.rmtree('ftl_files/')
 
+    print("old files destroyed")
+
     language_page = urllib.request.urlopen("http://icu-project.org/trac/browser/trunk/icu4c/source/data/lang")
     language_lines = language_page.read().decode('utf-8', "strict").split("\n")
     languages_tmp = get_file_names(language_lines) # list of language names
@@ -190,6 +191,8 @@ if __name__== "__main__":
     region_page = urllib.request.urlopen("http://icu-project.org/trac/browser/trunk/icu4c/source/data/region")
     region_lines = region_page.read().decode('utf-8', "strict").split("\n")
     regions = get_file_names(region_lines) # list of language names
+
+    print("lists created")
 
     # print("languages:", len(languages_tmp), "regions:", len(regions), "total:", len(languages_tmp) + len(regions))
 
@@ -209,12 +212,15 @@ if __name__== "__main__":
             # print(count, l, "******")
             languages.append(l)
 
+    print("made parallel")
     # print("languages:", len(languages), "regions:", len(regions), "common:", len(common)*2, "total:", len(languages) + len(regions) + len(common)*2)
 
 
-
+    print("extracting cldr")
 
     cldr_to_ftl(common, languages, regions)
+
+    print("adding overlays")
 
     if os.path.exists("overlays/languages"):
         overlay("overlays/languages/")
