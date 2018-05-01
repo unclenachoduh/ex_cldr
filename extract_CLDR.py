@@ -123,11 +123,14 @@ if __name__== "__main__":
     if os.path.exists("ftl_files/"):
         shutil.rmtree('ftl_files/')
 
+    print("Removed old FTL files")
+
     language_page = urllib.request.urlopen("http://icu-project.org/trac/browser/trunk/icu4c/source/data/lang")
     language_text = language_page.read().decode('utf-8', "strict")
     language_lines = language_text.split("\n")
     languages = get_file_names(language_lines) # list of language names
 
+    print("Extracting CLDR language data...")
     cldr_to_ftl(languages, 0)
 
     region_page = urllib.request.urlopen("http://icu-project.org/trac/browser/trunk/icu4c/source/data/region")
@@ -135,10 +138,15 @@ if __name__== "__main__":
     region_lines = region_text.split("\n")
     regions = get_file_names(region_lines) # list of language names
 
+    print("Extracting CLDR region data...")
     cldr_to_ftl(regions, 1)
+
+    print("Overlaying extracted data...")
 
     if os.path.exists("overlays/languages"):
         overlay("overlays/languages/")
 
     if os.path.exists("overlays/regions/"):
         overlay("overlays/regions/")
+
+    print("Complete")
